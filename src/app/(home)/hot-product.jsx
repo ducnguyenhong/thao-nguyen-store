@@ -1,0 +1,102 @@
+import { ProductItem } from '@/components/common';
+import { Image } from '@/components/control';
+import { formatCurrency, PX_ALL } from '@/utils/helper-server';
+import { Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
+import Link from 'next/link';
+import { FaStar } from 'react-icons/fa';
+import { IoArrowForwardOutline } from 'react-icons/io5';
+
+const HotProduct = () => {
+  return (
+    <Box w="full" bgColor="#FFF" py="80px" px={PX_ALL} pos="relative">
+      <Flex direction="column">
+        <Flex align="center" justify="space-between">
+          <Text as="h1" fontSize={28} fontWeight={700} color="#1A1A1A">
+            Sản phẩm bán chạy nhất
+          </Text>
+
+          <Link href="/" style={{ display: 'block' }}>
+            <Flex align="center" gap="4px">
+              <Text fontSize={16} fontWeight={500} color="#00B207">
+                Xem thêm
+              </Text>
+              <IoArrowForwardOutline size={18} color="#00B207" />
+            </Flex>
+          </Link>
+        </Flex>
+      </Flex>
+
+      <Grid w="full" mt="40px" gap="24px" templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(5, 1fr)' }}>
+        {[1, 2, 3, 4, 5].map((item) => {
+          return (
+            <GridItem key={item}>
+              <ProductItem />
+            </GridItem>
+          );
+        })}
+      </Grid>
+
+      <Image src="/images/decor-1.png" w="100px" h="300px" pos="absolute" bottom="30px" left="0px" />
+
+      <Grid templateColumns="repeat(4, 1fr)" gap="24px" mt="40px">
+        {[1, 2, 3].map((item) => {
+          return (
+            <GridItem key={item}>
+              <Text fontSize={22} fontWeight={700} color="#1a1a1a">
+                Rau xanh
+              </Text>
+              <Flex direction="column" mt="16px" gap="16px">
+                {[1, 2, 3].map((product) => {
+                  return (
+                    <Flex
+                      key={product}
+                      py="6px"
+                      align="center"
+                      border="1px solid #e6e6e6"
+                      borderRadius={6}
+                      overflow="hidden"
+                      transitionDuration="250ms"
+                      pos="relative"
+                      className="group"
+                      _hover={{ borderColor: '#2C742F', boxShadow: '0px 0px 15px -3px #20b526ba' }}
+                    >
+                      <Link href="/" style={{ display: 'block' }}>
+                        <Image src="/images/product.png" w="100px" h="100px" />
+                      </Link>
+                      <Flex direction="column" flex={1}>
+                        <Link href="/" style={{ display: 'block' }}>
+                          <Text
+                            fontSize={16}
+                            color="#4D4D4D"
+                            fontWeight={400}
+                            transitionDuration="250ms"
+                            _groupHover={{ color: '#008004' }}
+                          >
+                            Táo đá xanh Úc 1kg
+                          </Text>
+                        </Link>
+                        <Text mt="2px" fontSize={16} fontWeight={700}>
+                          {formatCurrency(100000)}
+                        </Text>
+                        <Flex mt="4px" align="center" gap="2px">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <FaStar key={star} size={14} color="#FF8A00" />
+                          ))}
+                        </Flex>
+                      </Flex>
+                    </Flex>
+                  );
+                })}
+              </Flex>
+            </GridItem>
+          );
+        })}
+        <GridItem>
+          <Image src="/images/hot-product-banner.png" w="full" h="full" borderRadius={8} />
+        </GridItem>
+      </Grid>
+    </Box>
+  );
+};
+
+export default HotProduct;
