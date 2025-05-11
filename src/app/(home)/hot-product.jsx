@@ -1,4 +1,4 @@
-import { ProductItem } from '@/components/common';
+import { ProductItem, SectionTitle } from '@/components/common';
 import { Image } from '@/components/control';
 import { formatCurrency, PX_ALL } from '@/utils/helper-server';
 import { Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
@@ -11,9 +11,7 @@ const HotProduct = () => {
     <Box w="full" bgColor="#FFF" py="80px" px={PX_ALL} pos="relative">
       <Flex direction="column">
         <Flex align="center" justify="space-between">
-          <Text as="h1" fontSize={28} fontWeight={700} color="#1A1A1A">
-            Sản phẩm bán chạy nhất
-          </Text>
+          <SectionTitle title="Sản phẩm bán chạy nhất" />
 
           <Link href="/" style={{ display: 'block' }}>
             <Flex align="center" gap="4px">
@@ -35,8 +33,6 @@ const HotProduct = () => {
           );
         })}
       </Grid>
-
-      <Image src="/images/decor-1.png" w="100px" h="300px" pos="absolute" bottom="30px" left="0px" />
 
       <Grid templateColumns="repeat(4, 1fr)" gap="24px" mt="40px">
         {[1, 2, 3].map((item) => {
@@ -95,6 +91,10 @@ const HotProduct = () => {
           <Image src="/images/hot-product-banner.png" w="full" h="full" borderRadius={8} />
         </GridItem>
       </Grid>
+
+      <Image src="/images/decor-1.png" w="80px" h="240px" pos="absolute" bottom="80px" left="0px" />
+      <Image src="/images/decor-6.png" w="200px" h="170px" pos="absolute" top="140px" left="0px" />
+      <Image src="/images/decor-7.png" w="140px" h="140px" pos="absolute" top="440px" right="0px" />
     </Box>
   );
 };

@@ -15,12 +15,12 @@ const MENU_LIST = [
     children: CATEGORY_LIST
   },
   {
-    title: 'Tin tức',
-    href: '/tin-tuc'
+    title: 'Sản phẩm',
+    href: '/san-pham'
   },
   {
-    title: 'Giới thiệu',
-    href: '/gioi-thieu'
+    title: 'Tin tức',
+    href: '/tin-tuc'
   }
 ];
 
@@ -31,15 +31,25 @@ const Menu = () => {
         const { title, href, children } = item;
         if (children) {
           return (
-            <Box className="group" pos="relative" h="full">
+            <Flex direction="column" className="group" pos="relative" align="center" h="full" key={index}>
               <Flex align="center" gap="4px" userSelect="none" cursor="pointer" h="full">
-                <Text fontSize={14} color="#1a1a1a" transitionDuration="200ms" _groupHover={{ color: '#00B207' }}>
+                <Text fontSize={14} color="#1a1a1a">
                   {title}
                 </Text>
-                <Icon transitionDuration="200ms" color="#002603" _groupHover={{ color: '#00B207' }}>
+                <Icon color="#002603">
                   <IoChevronDownOutline size={14} style={{ marginTop: '3px' }} />
                 </Icon>
               </Flex>
+
+              <Box
+                pos="relative"
+                top="-20px"
+                w="1px"
+                h="1px"
+                bgColor="transparent"
+                transitionDuration="200ms"
+                _groupHover={{ bgColor: '#00b207', w: 'full' }}
+              />
 
               <Grid
                 pos="absolute"
@@ -82,17 +92,26 @@ const Menu = () => {
                   </GridItem>
                 ))}
               </Grid>
-            </Box>
+            </Flex>
           );
         }
 
         return (
-          <Flex as="li" key={index}>
+          <Flex as="li" key={index} direction="column" className="group" align="center">
             <Link href={href}>
               <Text fontSize={14} color="#1a1a1a">
                 {title}
               </Text>
             </Link>
+            <Box
+              pos="relative"
+              top="4px"
+              w="1px"
+              h="1px"
+              bgColor="transparent"
+              transitionDuration="200ms"
+              _groupHover={{ bgColor: '#00b207', w: 'full' }}
+            />
           </Flex>
         );
       })}

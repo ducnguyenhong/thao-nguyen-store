@@ -20,9 +20,10 @@ const Banner = () => {
       bgPos="center"
       align="center"
       px={PX_ALL}
+      pos="relative"
       className="home-banner"
     >
-      <Swiper pagination autoplay loop modules={[Pagination, Autoplay]}>
+      <Swiper pagination autoplay={{ delay: 5000 }} loop modules={[Pagination, Autoplay]}>
         {[1, 2, 3].map((item, index) => {
           return (
             <SwiperSlide key={index}>
@@ -52,6 +53,8 @@ const Banner = () => {
           );
         })}
       </Swiper>
+
+      <Image src="/images/decor-11.webp" w="85px" h="80px" pos="absolute" top="0px" left="0px" opacity={0.9} />
     </Flex>
   );
 };

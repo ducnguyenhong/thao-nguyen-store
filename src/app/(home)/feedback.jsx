@@ -1,3 +1,4 @@
+import { SectionTitle } from '@/components/common';
 import { Image } from '@/components/control';
 import { PX_ALL } from '@/utils/helper-server';
 import { Flex, Text } from '@chakra-ui/react';
@@ -29,10 +30,17 @@ const FEEDBACK_LIST = [
 
 const Feedback = () => {
   return (
-    <Flex px={PX_ALL} py="80px" direction="column" bgGradient="to-b" gradientFrom="#FFF" gradientTo="#f1f1f1">
-      <Text as="h1" fontSize={28} fontWeight={700} color="#1A1A1A">
-        Đánh giá từ khách hàng
-      </Text>
+    <Flex
+      px={PX_ALL}
+      py="80px"
+      direction="column"
+      bgGradient="to-b"
+      gradientFrom="#FFF"
+      gradientVia="#f5f5f5"
+      gradientTo="#f1f1f1"
+      pos="relative"
+    >
+      <SectionTitle title="Đánh giá từ khách hàng" />
 
       <Flex gap="24px" mt="40px">
         {FEEDBACK_LIST.map((item) => {
@@ -66,6 +74,9 @@ const Feedback = () => {
           );
         })}
       </Flex>
+
+      <Image src="/images/decor-8.png" w="94px" h="192px" pos="absolute" top="60px" right="40px" />
+      <Image src="/images/decor-9.png" w="100px" h="65px" pos="absolute" bottom="-20px" left="170px" zIndex={5} />
     </Flex>
   );
 };

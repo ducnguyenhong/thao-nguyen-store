@@ -1,3 +1,4 @@
+import { SectionTitle } from '@/components/common';
 import { Image } from '@/components/control';
 import { CATEGORY_LIST } from '@/utils/data';
 import { PX_ALL } from '@/utils/helper-server';
@@ -14,10 +15,9 @@ const Category = () => {
       bgSize="cover"
       bgRepeat="no-repeat"
       bgPos="center"
+      pos="relative"
     >
-      <Text as="h1" fontSize={28} fontWeight={700} color="#1A1A1A">
-        Danh mục sản phẩm
-      </Text>
+      <SectionTitle title="Danh mục sản phẩm" />
 
       <Grid w="full" templateColumns={'repeat(6, 1fr)'} gap="24px" mt="40px">
         {CATEGORY_LIST.map((item) => {
@@ -60,6 +60,8 @@ const Category = () => {
           );
         })}
       </Grid>
+
+      <Image src="/images/decor-4.png" w="52px" h="76px" pos="absolute" bottom="10px" right="244px" opacity={0.7} />
     </Flex>
   );
 };

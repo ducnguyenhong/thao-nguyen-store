@@ -19,12 +19,13 @@ const ChooseUs = () => {
   ];
 
   return (
-    <Flex px={PX_ALL} gap="40px" py="80px" align="center">
+    <Flex px={PX_ALL} gap="40px" py="80px" align="center" pos="relative">
       <Flex flex={1} gap="24px">
-        <Flex flex={2 / 5}>
+        <Flex flex={2 / 5} pos="relative">
           <AspectRatio ratio={276 / 400} w="full" h="90%" borderRadius={8} overflow="hidden">
             <Image src="/images/choose-us-2.png" w="full" h="auto" />
           </AspectRatio>
+          <Image src="/images/decor-4.png" w="60px" h="88px" pos="absolute" bottom="-5px" left="-45px" />
         </Flex>
         <Flex flex={3 / 5}>
           <AspectRatio ratio={444 / 457} w="full" borderRadius={8} overflow="hidden">
@@ -59,6 +60,9 @@ const ChooseUs = () => {
           <IoArrowForwardOutline size={18} color="#FFF" />
         </Button>
       </Flex>
+
+      <Image src="/images/decor-2.png" w="140px" h="286px" pos="absolute" top="105px" right="36px" />
+      <Image src="/images/decor-3.png" w="240px" h="260px" pos="absolute" top="24px" left="0px" />
     </Flex>
   );
 };
