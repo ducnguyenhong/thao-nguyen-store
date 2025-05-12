@@ -76,7 +76,7 @@ const Menu = () => {
                     transitionDuration="200ms"
                     _hover={{ bgColor: '#f2f2f2' }}
                   >
-                    <Link href={c.id} style={{ display: 'block' }}>
+                    <Link href={`/san-pham?category=${c.id}`} style={{ display: 'block' }}>
                       <Flex align="center" gap="16px">
                         <Image src={c.icon} w="32px" h="32px" />
                         <Flex flex={1} direction="column">

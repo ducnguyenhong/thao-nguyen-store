@@ -3,7 +3,7 @@ import { LuSearch } from 'react-icons/lu';
 
 const Search = () => {
   return (
-    <Dialog.Root size="xl">
+    <Dialog.Root size="xl" trapFocus={false}>
       <Dialog.Trigger asChild>
         <Box cursor="pointer" className="group">
           <Icon color="#002603" transitionDuration="200ms" _groupHover={{ color: '#00b207' }}>

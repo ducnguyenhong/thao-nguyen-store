@@ -1,14 +1,16 @@
+import { Image } from '@/components/control';
+import { Tooltip } from '@/components/ui/tooltip';
 import { formatCurrency } from '@/utils/helper-server';
-import { AspectRatio, Box, Button, Flex, Icon, Text } from '@chakra-ui/react';
+import { AspectRatio, Box, Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { memo } from 'react';
 import { FaStar } from 'react-icons/fa';
-import { FaCartPlus } from 'react-icons/fa6';
 import { LuHeart } from 'react-icons/lu';
-import { Image } from '../control';
-import { Tooltip } from '../ui/tooltip';
+import AddToCart from './add-to-cart';
 
 const ProductItem = () => {
+  const href = '/san-pham/abc.1';
+
   return (
     <Box
       className="group"
@@ -66,14 +68,14 @@ const ProductItem = () => {
           <LuHeart size={21} color="#002603" />
         </Tooltip>
       </Flex>
-      <AspectRatio ratio={4 / 3}>
-        <Link href="/">
+      <AspectRatio ratio={4 / 3} py="16px">
+        <Link href={href}>
           <Image h="100%" w="100%" src="/images/product.png" alt="product" />
         </Link>
       </AspectRatio>
       <Flex align="center" gap="16px" p="16px" w="full">
         <Flex direction="column" flex={1}>
-          <Link href="/" style={{ display: 'block' }}>
+          <Link href={href} style={{ display: 'block' }}>
             <Text
               fontSize={16}
               color="#4D4D4D"
@@ -95,22 +97,7 @@ const ProductItem = () => {
           </Flex>
         </Flex>
 
-        <Button
-          borderRadius="full"
-          minH={0}
-          minW={0}
-          w="40px"
-          h="40px"
-          bgColor="#dbffdb"
-          transitionDuration="250ms"
-          title="Thêm vào giỏ hàng"
-          _groupHover={{ bgColor: '#00B207' }}
-          _hover={{ scale: 1.05 }}
-        >
-          <Icon color="#00B207" transitionDuration="250ms" _groupHover={{ color: '#FFF' }}>
-            <FaCartPlus size={12} />
-          </Icon>
-        </Button>
+        <AddToCart />
       </Flex>
     </Box>
   );

@@ -33,7 +33,7 @@ const Category = () => {
               border="1px solid #e6e6e6"
               _hover={{ borderColor: '#2C742F', boxShadow: '0px 0px 15px -3px #20b526ba' }}
             >
-              <Link href={`/danh-muc/${id}`} style={{ display: 'block', width: '100%' }}>
+              <Link href={`/san-pham?category=${id}`} style={{ display: 'block', width: '100%' }}>
                 <Flex direction="column" align="center">
                   <Box px="24px" w="full">
                     <AspectRatio ratio={1 / 1} w="full">
