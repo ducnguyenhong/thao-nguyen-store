@@ -19,7 +19,7 @@ const Category = () => {
     >
       <SectionTitle title="Danh mục sản phẩm" />
 
-      <Grid w="full" templateColumns={'repeat(6, 1fr)'} gap="24px" mt="40px">
+      <Grid w="full" templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(6, 1fr)' }} gap="24px" mt="40px">
         {CATEGORY_LIST.map((item) => {
           const { title, id, icon, numOfProduct } = item;
           return (

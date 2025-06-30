@@ -6,7 +6,7 @@ import { TfiHeadphoneAlt } from 'react-icons/tfi';
 
 const Contact = () => {
   return (
-    <Flex px={PX_ALL} py="40px" gap="24px" bgColor="#FFF">
+    <Flex px={PX_ALL} py="40px" gap="24px" bgColor="#FFF" direction={{ base: 'column', lg: 'row' }}>
       <Flex flex={1 / 4} border="1px solid #d2f0d4" borderRadius={8} p="20px" direction="column">
         <Flex w="56px" h="56px" align="center" justify="center" borderRadius="full" bgColor="#d9f4da">
           <SlLocationPin size={24} color="#00B207" />

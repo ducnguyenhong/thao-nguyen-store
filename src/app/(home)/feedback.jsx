@@ -42,7 +42,7 @@ const Feedback = () => {
     >
       <SectionTitle title="Đánh giá từ khách hàng" />
 
-      <Flex gap="24px" mt="40px">
+      <Flex gap="24px" mt="40px" direction={{ base: 'column', lg: 'row' }}>
         {FEEDBACK_LIST.map((item) => {
           const { user, position, avatar, content } = item;
           return (

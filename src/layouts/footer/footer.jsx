@@ -33,6 +33,7 @@ const Footer = () => {
         h="full"
         w="full"
         gap="120px"
+        direction={{ base: 'column', lg: 'row' }}
       >
         <Flex direction="column" flex={2 / 5} gap="16px">
           <Flex align="center" gap="6px">

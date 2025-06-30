@@ -18,13 +18,13 @@ const Header = () => {
       top={0}
       zIndex={100}
     >
-      <Flex flex={3 / 8} h="full">
+      <Flex flex={3 / 8} h="full" display={{ base: 'none', lg: 'flex' }}>
         <Menu />
       </Flex>
-      <Flex flex={2 / 8} justify="center">
+      <Flex flex={{ base: 'inherit', lg: 2 / 8 }} justify="center">
         <Logo />
       </Flex>
-      <Flex flex={3 / 8} justify="flex-end">
+      <Flex flex={3 / 8} justify="flex-end" display={{ base: 'none', lg: 'flex' }}>
         <RightNav />
       </Flex>
     </Flex>

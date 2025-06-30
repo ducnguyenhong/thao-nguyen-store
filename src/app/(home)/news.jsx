@@ -20,7 +20,7 @@ const News = () => {
       <Box bgColor="#80808033" w="full" h="full" pos="absolute" top={0} left={0} />
       <SectionTitle title="Tin tức mới" textAlign="center" />
 
-      <Flex w="full" gap="24px" zIndex={1}>
+      <Flex w="full" gap="24px" zIndex={1} direction={{ base: 'column', lg: 'row' }}>
         {[1, 2, 3, 4].map((item) => {
           return (
             <Flex flex={1 / 4} key={item}>

@@ -34,7 +34,7 @@ const HotProduct = () => {
         })}
       </Grid>
 
-      <Grid templateColumns="repeat(4, 1fr)" gap="24px" mt="40px">
+      <Grid templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap="24px" mt="40px">
         {[1, 2, 3].map((item) => {
           return (
             <GridItem key={item}>

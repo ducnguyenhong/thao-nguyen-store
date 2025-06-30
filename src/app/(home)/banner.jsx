@@ -27,17 +27,23 @@ const Banner = () => {
         {[1, 2, 3].map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <Flex gap="44px" align="center" pb="24px">
-                <Flex flex={4 / 7}>
+              <Flex gap="44px" align="center" pb="24px" direction={{ base: 'column', lg: 'row' }}>
+                <Flex flex={{ base: 'inherit', lg: 4 / 7 }} w="full">
                   <AspectRatio ratio={742 / 498} w="full">
                     <Image src="/images/vegetable.png" w="full" h="full" />
                   </AspectRatio>
                 </Flex>
-                <Flex flex={3 / 7} direction="column">
+                <Flex flex={{ base: 'inherit', lg: 3 / 7 }} direction="column">
                   <Text color="#00B207" fontSize={14} textTransform="uppercase">
                     Chào mừng đến với Thảo Nguyên Store
                   </Text>
-                  <Text as="h1" mt="12px" fontSize={64} fontWeight={600} lineHeight="76px">
+                  <Text
+                    as="h1"
+                    mt="12px"
+                    fontSize={{ base: 32, lg: 64 }}
+                    fontWeight={600}
+                    lineHeight={{ base: '40px', lg: '76px' }}
+                  >
                     Rau sạch, đồ xịn, thời trang đẹp
                   </Text>
                   <Text fontSize={14} color="#808080" mt="16px">

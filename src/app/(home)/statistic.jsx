@@ -34,6 +34,7 @@ const Statistic = () => {
       bgRepeat="no-repeat"
       bgPos="center"
       gap="24px"
+      direction={{ base: 'column', lg: 'row' }}
     >
       {STATISTIC_LIST.map((item, index) => {
         const { title, value, sub } = item;
