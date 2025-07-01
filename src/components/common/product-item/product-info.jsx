@@ -13,17 +13,17 @@ const ProductInfo = (props) => {
   const { isDetail } = props;
 
   return (
-    <Flex gap="24px" align="center">
-      <Flex flex={1 / 2} gap="12px" align="center">
+    <Flex gap="24px" align="center" direction={{ base: 'column', lg: 'row' }}>
+      <Flex flex={1 / 2} gap="12px" align="center" direction={{ base: 'column', lg: 'row' }}>
         <ImageSlide />
       </Flex>
       <Flex flex={1 / 2} direction="column">
         <Flex direction="column">
           <Text
-            fontSize={28}
+            fontSize={{ base: 22, lg: 28 }}
             color="#1a1a1a"
             fontWeight={600}
-            lineHeight="34px"
+            lineHeight={{ base: '28px', lg: '34px' }}
             transitionDuration="250ms"
             _groupHover={{ color: '#008004' }}
           >
@@ -107,7 +107,7 @@ const ProductInfo = (props) => {
           </Flex>
         </Flex>
 
-        <Text mt="16px" color="#808080" fontSize={14} fontWeight={300}>
+        <Text mt="16px" color="#808080" fontSize={14} fontWeight={300} lineClamp={{ base: 5, lg: 'inherit' }}>
           Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam,
           blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. nibh diam, blandit vel
           consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar.
@@ -126,8 +126,20 @@ const ProductInfo = (props) => {
               </Button>
             ) : (
               <Dialog.ActionTrigger asChild>
-                <Button bgColor="#00B207" borderRadius="full" w="full" h="full" fontSize={16} mr="2px" color="#FFF">
-                  Thêm vào giỏ hàng
+                <Button
+                  bgColor="#00B207"
+                  borderRadius="full"
+                  w="full"
+                  h="full"
+                  fontSize={{ base: 15, lg: 16 }}
+                  mr="2px"
+                  color="#FFF"
+                >
+                  Thêm{' '}
+                  <Text as="span" color="#FFF" fontSize={16} display={{ base: 'none', lg: 'inline' }}>
+                    vào
+                  </Text>{' '}
+                  giỏ hàng
                   <FaCartPlus color="#FFF" size={16} />
                 </Button>
               </Dialog.ActionTrigger>

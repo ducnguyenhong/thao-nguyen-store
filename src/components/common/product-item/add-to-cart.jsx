@@ -26,12 +26,12 @@ const AddToCart = () => {
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
-        <Dialog.Positioner>
-          <Dialog.Content mt="48px" p="24px" w="1200px" h="auto">
+        <Dialog.Positioner mt={{ base: 0, lg: '-100px' }}>
+          <Dialog.Content mt="48px" p={{ base: '16px', lg: '32px' }} w="1200px" h="auto">
             <Dialog.Header>
               <Dialog.Title>Thêm sản phẩm vào giỏ hàng</Dialog.Title>
             </Dialog.Header>
-            <Dialog.Body pt="32px" pb="8px">
+            <Dialog.Body pt={{ base: '24px', lg: '32px' }} pb="8px">
               <ProductInfo />
             </Dialog.Body>
             <Dialog.CloseTrigger asChild>

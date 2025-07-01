@@ -7,7 +7,12 @@ const RelatedProduct = () => {
       <Text as="h1" fontSize={24} fontWeight={600}>
         Sản phẩm có liên quan
       </Text>
-      <Grid mt="24px" w="full" templateColumns="repeat(4, 1fr)" gap="24px">
+      <Grid
+        mt="24px"
+        w="full"
+        templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+        gap={{ base: '16px', lg: '24px' }}
+      >
         {[1, 2, 3, 4].map((item, index) => {
           return (
             <GridItem key={index}>

@@ -89,6 +89,7 @@ export const getMetadata = (data) => {
   } = data || {};
 
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_URL),
     title,
     description,
     keywords: keywords ? [...META_KEYWORDS, ...keywords] : META_KEYWORDS,

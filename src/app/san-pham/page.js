@@ -10,8 +10,14 @@ const ProductPage = () => {
     <div>
       <Breadcrumb data={[{ title: 'Sản phẩm', href: '/san-pham', isActive: true }]} />
 
-      <Flex mt="40px" pb="80px" gap="24px" px={PX_ALL}>
-        <Flex flex={1 / 4} direction="column" gap="32px">
+      <Flex
+        mt={{ base: '24px', lg: '40px' }}
+        pb={{ base: '32px', lg: '80px' }}
+        gap="24px"
+        px={PX_ALL}
+        direction={{ base: 'column', lg: 'row' }}
+      >
+        <Flex flex={1 / 4} direction="column" gap={{ base: '24px', lg: '32px' }}>
           <FilterSearch />
           <Flex w="full" h="1px" bgColor="#f2f2f2" />
           <FilterCategory />

@@ -26,7 +26,7 @@ const MENU_LIST = [
 
 const Menu = () => {
   return (
-    <Flex as="ul" align="center" gap="32px" h="full">
+    <Flex as="ul" align="center" gap="32px" h="full" direction={{ base: 'column', lg: 'row' }}>
       {MENU_LIST.map((item, index) => {
         const { title, href, children } = item;
         if (children) {

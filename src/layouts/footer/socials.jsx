@@ -1,16 +1,36 @@
-import { Flex, Icon } from '@chakra-ui/react';
+import { Flex, Icon, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { FaFacebookF } from 'react-icons/fa';
+import { FaTiktok, FaYoutube } from 'react-icons/fa6';
 
 const SOCIAL_LIST = [
   {
     icon: <FaFacebookF size={18} />,
-    href: '/1',
+    href: 'https://www.facebook.com/landifyvietnam',
     title: 'Facebook'
+  },
+  {
+    icon: <FaYoutube size={19} />,
+    href: 'https://www.youtube.com/@LandifyVietnam',
+    title: 'Youtube'
+  },
+  {
+    icon: <FaTiktok size={18} />,
+    href: 'https://www.tiktok.com/@landifyvietnam',
+    title: 'Tiktok'
+  },
+  {
+    icon: (
+      <Text as="span" color="#FFF" fontSize={18}>
+        Z
+      </Text>
+    ),
+    href: 'https://zalo.me/0389755202',
+    title: 'Zalo'
   }
 ];
 
-const Socials = () => {
+const Socials = ({ dark }) => {
   return (
     <Flex align="center" gap="8px">
       {SOCIAL_LIST.map((item) => {
@@ -35,7 +55,7 @@ const Socials = () => {
               transitionDuration="250ms"
               _hover={{ bgColor: '#00B207' }}
             >
-              <Icon color="#FFF">{icon}</Icon>
+              <Icon color={dark ? '#4f4f4f' : '#FFF'}>{icon}</Icon>
             </Flex>
           </Link>
         );

@@ -2,13 +2,14 @@ import { PX_ALL } from '@/utils/helper-server';
 import { Flex } from '@chakra-ui/react';
 import Logo from './logo';
 import Menu from './menu';
+import MenuMobile from './menu-mobile';
 import RightNav from './right-nav';
 
 const Header = () => {
   return (
     <Flex
       as="header"
-      h="70px"
+      h={{ base: '60px', lg: '70px' }}
       px={PX_ALL}
       bgColor="#FFF"
       align="center"
@@ -26,6 +27,9 @@ const Header = () => {
       </Flex>
       <Flex flex={3 / 8} justify="flex-end" display={{ base: 'none', lg: 'flex' }}>
         <RightNav />
+      </Flex>
+      <Flex display={{ base: 'flex', lg: 'none' }}>
+        <MenuMobile />
       </Flex>
     </Flex>
   );

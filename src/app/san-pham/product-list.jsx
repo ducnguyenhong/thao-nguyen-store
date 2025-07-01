@@ -20,7 +20,12 @@ const ProductList = () => {
 
   return (
     <Box w="full">
-      <Flex align="center" gap="12px" mb="24px">
+      <Flex
+        align={{ base: 'flex-start', lg: 'center' }}
+        gap={{ base: '24px', lg: '12px' }}
+        mb="24px"
+        direction={{ base: 'column', lg: 'row' }}
+      >
         <Flex flex={1}>
           <RadioGroup.Root
             variant="outline"
@@ -28,7 +33,11 @@ const ProductList = () => {
             value={value}
             onValueChange={(e) => setValue(e.value)}
           >
-            <Flex align="center" gap="40px">
+            <Flex
+              align={{ base: 'flex-start', lg: 'center' }}
+              gap={{ base: '8px', lg: '40px' }}
+              direction={{ base: 'column', lg: 'row' }}
+            >
               {FILTERS.map((item) => {
                 const { label, value } = item;
                 return (
@@ -45,7 +54,7 @@ const ProductList = () => {
           </RadioGroup.Root>
         </Flex>
 
-        <Text fontSize={14} color="#1a1a1a">
+        <Text fontSize={14} color="#1a1a1a" textAlign={{ base: 'center', lg: 'left' }} w={{ base: 'full', lg: 'auto' }}>
           Có{' '}
           <Text as="span" fontSize={14} color="#1a1a1a" fontWeight={600}>
             58
@@ -53,7 +62,11 @@ const ProductList = () => {
           sản phẩm
         </Text>
       </Flex>
-      <Grid templateColumns="repeat(4, 1fr)" gap="24px" w="full">
+      <Grid
+        templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+        gap={{ base: '16px', lg: '24px' }}
+        w="full"
+      >
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item) => {
           return (
             <GridItem key={item}>

@@ -7,7 +7,9 @@ const Logo = () => {
     <Link href="/">
       <Flex align="center" gap="6px">
         <Image src="/images/logo.webp" h="32px" w="32px" />
-        <Text className="text-logo">Thảo Nguyên Store</Text>
+        <Text className="text-logo" fontSize={{ base: 18, lg: 20 }}>
+          Thảo Nguyên Store
+        </Text>
       </Flex>
     </Link>
   );

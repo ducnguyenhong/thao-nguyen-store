@@ -9,7 +9,7 @@ const ImageSlide = () => {
 
   return (
     <>
-      <Flex direction="column" w="80px" gap="12px">
+      <Flex direction={{ base: 'row', lg: 'column' }} w={{ base: 'full', lg: '80px' }} gap="12px">
         {[1, 2, 3, 4].map((item, index) => {
           const isActive = index === activeIndex;
           return (
@@ -27,8 +27,8 @@ const ImageSlide = () => {
           );
         })}
       </Flex>
-      <Flex flex={1}>
-        <AspectRatio ratio={4 / 3} w="full">
+      <Flex flex={1} w={{ base: '80%', lg: 'full' }}>
+        <AspectRatio ratio={{ base: 16 / 9, lg: 4 / 3 }} w="full">
           <Image src="/images/product.png" w="full" h="full" />
         </AspectRatio>
       </Flex>
