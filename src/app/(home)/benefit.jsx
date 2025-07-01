@@ -18,7 +18,7 @@ const BENEFIT_LIST = [
   {
     id: 2,
     title: 'Thanh toán tiện lợi',
-    description: 'Hỗ trợ nhiều hình thức thanh toán',
+    description: 'Nhiều hình thức thanh toán',
     icon: <HiOutlineCreditCard size={31} />
   },
   {
@@ -47,11 +47,12 @@ const Benefit = () => {
   }, []);
 
   return (
-    <Box px={PX_ALL} pt="40px">
+    <Box px={PX_ALL} pt={{ base: '0px', lg: '40px' }}>
       <Grid
         w="full"
         templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
-        borderBottom="1px solid #e6e6e6"
+        borderBottom={{ base: 'none', lg: '1px solid #e6e6e6' }}
+        gap={{ base: '16px', lg: 0 }}
       >
         {BENEFIT_LIST.map((item) => {
           const { title, description, icon, id } = item;
@@ -60,7 +61,7 @@ const Benefit = () => {
           return (
             <GridItem
               key={id}
-              pb="40px"
+              pb={{ base: '16px', lg: '40px' }}
               borderBottom="2px solid"
               borderColor={isActive ? '#00b207' : 'transparent'}
               transitionDuration="200ms"
@@ -79,10 +80,10 @@ const Benefit = () => {
                     {icon}
                   </Icon>
                 </Flex>
-                <Text mt="16px" color="#1A1A1A" fontSize={18} fontWeight={600} textAlign="center">
+                <Text mt="16px" color="#1A1A1A" fontSize={{ base: 15, lg: 18 }} fontWeight={600} textAlign="center">
                   {title}
                 </Text>
-                <Text mt="8px" color="#999999" fontSize={14} textAlign="center">
+                <Text mt="8px" color="#999999" fontSize={{ base: 13, lg: 14 }} textAlign="center">
                   {description}
                 </Text>
               </Flex>

@@ -8,8 +8,8 @@ const News = () => {
   return (
     <Flex
       px={PX_ALL}
-      py="80px"
-      gap="40px"
+      py={{ base: '32px', lg: '80px' }}
+      gap={{ base: '24px', lg: '40px' }}
       direction="column"
       bgImage="url(/images/bg-news.png)"
       bgSize="cover"
@@ -20,7 +20,7 @@ const News = () => {
       <Box bgColor="#80808033" w="full" h="full" pos="absolute" top={0} left={0} />
       <SectionTitle title="Tin tức mới" textAlign="center" />
 
-      <Flex w="full" gap="24px" zIndex={1} direction={{ base: 'column', lg: 'row' }}>
+      <Flex w="full" gap={{ base: '16px', lg: '24px' }} zIndex={1} direction={{ base: 'column', lg: 'row' }}>
         {[1, 2, 3, 4].map((item) => {
           return (
             <Flex flex={1 / 4} key={item}>

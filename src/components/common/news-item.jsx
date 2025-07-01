@@ -18,7 +18,7 @@ const NewsItem = () => {
       _hover={{ borderColor: '#2C742F', boxShadow: '0px 0px 15px -3px #20b526ba' }}
     >
       <Link href={href} style={{ display: 'block', width: '100%' }}>
-        <AspectRatio ratio={4 / 3} w="full">
+        <AspectRatio ratio={{ base: 16 / 9, lg: 4 / 3 }} w="full">
           <Image src="/images/news.png" w="full" h="full" />
         </AspectRatio>
       </Link>

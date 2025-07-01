@@ -8,14 +8,14 @@ import { IoArrowForwardOutline } from 'react-icons/io5';
 
 const HotProduct = () => {
   return (
-    <Box w="full" bgColor="#FFF" py="80px" px={PX_ALL} pos="relative">
+    <Box w="full" bgColor="#FFF" py={{ base: '32px', lg: '80px' }} px={PX_ALL} pos="relative">
       <Flex direction="column">
         <Flex align="center" justify="space-between">
           <SectionTitle title="Sản phẩm bán chạy nhất" />
 
           <Link href="/" style={{ display: 'block' }}>
             <Flex align="center" gap="4px">
-              <Text fontSize={16} fontWeight={500} color="#00B207">
+              <Text fontSize={16} fontWeight={500} color="#00B207" display={{ base: 'none', lg: 'block' }}>
                 Xem thêm
               </Text>
               <IoArrowForwardOutline size={18} color="#00B207" />
@@ -24,20 +24,29 @@ const HotProduct = () => {
         </Flex>
       </Flex>
 
-      <Grid w="full" mt="40px" gap="24px" templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(5, 1fr)' }}>
-        {[1, 2, 3, 4, 5].map((item) => {
+      <Grid
+        w="full"
+        mt={{ base: '32px', lg: '40px' }}
+        gap={{ base: '16px', lg: '24px' }}
+        templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(5, 1fr)' }}
+      >
+        {[1, 2, 3, 4, 5].map((item, index) => {
           return (
-            <GridItem key={item}>
+            <GridItem key={item} display={{ base: index === 4 ? 'none' : 'block', lg: 'block' }}>
               <ProductItem />
             </GridItem>
           );
         })}
       </Grid>
 
-      <Grid templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap="24px" mt="40px">
-        {[1, 2, 3].map((item) => {
+      <Grid
+        templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+        gap={{ base: '16px', lg: '24px' }}
+        mt={{ base: '32px', lg: '40px' }}
+      >
+        {[1, 2, 3].map((item, index) => {
           return (
-            <GridItem key={item}>
+            <GridItem key={item} display={{ base: index > 1 ? 'none' : 'block', lg: 'block' }}>
               <Text fontSize={22} fontWeight={700} color="#1a1a1a">
                 Rau xanh
               </Text>
@@ -46,7 +55,9 @@ const HotProduct = () => {
                   return (
                     <Flex
                       key={product}
-                      py="6px"
+                      direction={{ base: 'column', lg: 'row' }}
+                      pt="6px"
+                      pb={{ base: '16px', lg: '6px' }}
                       align="center"
                       border="1px solid #e6e6e6"
                       borderRadius={6}
@@ -59,7 +70,7 @@ const HotProduct = () => {
                       <Link href="/" style={{ display: 'block' }}>
                         <Image src="/images/product.png" w="100px" h="100px" />
                       </Link>
-                      <Flex direction="column" flex={1}>
+                      <Flex direction="column" flex={{ base: 'inherit', lg: 1 }}>
                         <Link href="/" style={{ display: 'block' }}>
                           <Text
                             fontSize={16}
@@ -87,14 +98,38 @@ const HotProduct = () => {
             </GridItem>
           );
         })}
-        <GridItem>
+        <GridItem colSpan={{ base: 2, lg: 1 }} h={{ base: '500px', lg: 'auto' }}>
           <Image src="/images/hot-product-banner.png" w="full" h="full" borderRadius={8} />
         </GridItem>
       </Grid>
 
-      <Image src="/images/decor-1.png" w="80px" h="240px" pos="absolute" bottom="80px" left="0px" />
-      <Image src="/images/decor-6.png" w="200px" h="170px" pos="absolute" top="140px" left="0px" />
-      <Image src="/images/decor-7.png" w="140px" h="140px" pos="absolute" top="440px" right="0px" />
+      <Image
+        src="/images/decor-1.png"
+        w="80px"
+        h="240px"
+        pos="absolute"
+        bottom="80px"
+        left="0px"
+        display={{ base: 'none', lg: 'block' }}
+      />
+      <Image
+        src="/images/decor-6.png"
+        w="200px"
+        h="170px"
+        pos="absolute"
+        top="140px"
+        left="0px"
+        display={{ base: 'none', lg: 'block' }}
+      />
+      <Image
+        src="/images/decor-7.png"
+        w="140px"
+        h="140px"
+        pos="absolute"
+        top="440px"
+        right="0px"
+        display={{ base: 'none', lg: 'block' }}
+      />
     </Box>
   );
 };

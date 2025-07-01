@@ -32,7 +32,7 @@ const Feedback = () => {
   return (
     <Flex
       px={PX_ALL}
-      py="80px"
+      py={{ base: '32px', lg: '80px' }}
       direction="column"
       bgGradient="to-b"
       gradientFrom="#FFF"
@@ -42,7 +42,7 @@ const Feedback = () => {
     >
       <SectionTitle title="Đánh giá từ khách hàng" />
 
-      <Flex gap="24px" mt="40px" direction={{ base: 'column', lg: 'row' }}>
+      <Flex gap="24px" mt={{ base: '24px', lg: '40px' }} direction={{ base: 'column', lg: 'row' }}>
         {FEEDBACK_LIST.map((item) => {
           const { user, position, avatar, content } = item;
           return (
@@ -76,7 +76,16 @@ const Feedback = () => {
       </Flex>
 
       <Image src="/images/decor-8.png" w="94px" h="192px" pos="absolute" top="60px" right="40px" />
-      <Image src="/images/decor-9.png" w="100px" h="65px" pos="absolute" bottom="-20px" left="170px" zIndex={5} />
+      <Image
+        src="/images/decor-9.png"
+        w="100px"
+        h="65px"
+        pos="absolute"
+        bottom="-20px"
+        left="170px"
+        zIndex={5}
+        display={{ base: 'none', lg: 'block' }}
+      />
     </Flex>
   );
 };

@@ -9,7 +9,7 @@ const Category = () => {
   return (
     <Flex
       px={PX_ALL}
-      py="80px"
+      py={{ base: '32px', lg: '80px' }}
       direction="column"
       bgImage="url(/images/bg-category.png)"
       bgSize="cover"
@@ -19,7 +19,12 @@ const Category = () => {
     >
       <SectionTitle title="Danh mục sản phẩm" />
 
-      <Grid w="full" templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(6, 1fr)' }} gap="24px" mt="40px">
+      <Grid
+        w="full"
+        templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(6, 1fr)' }}
+        gap={{ base: '16px', lg: '24px' }}
+        mt={{ base: '24px', lg: '40px' }}
+      >
         {CATEGORY_LIST.map((item) => {
           const { title, id, icon, numOfProduct } = item;
           return (
@@ -29,14 +34,14 @@ const Category = () => {
               bgColor="#FFF"
               borderRadius={8}
               transitionDuration="250ms"
-              p="24px"
+              p={{ base: '16px', lg: '24px' }}
               border="1px solid #e6e6e6"
               _hover={{ borderColor: '#2C742F', boxShadow: '0px 0px 15px -3px #20b526ba' }}
             >
               <Link href={`/san-pham?category=${id}`} style={{ display: 'block', width: '100%' }}>
                 <Flex direction="column" align="center">
                   <Box px="24px" w="full">
-                    <AspectRatio ratio={1 / 1} w="full">
+                    <AspectRatio ratio={1 / 1} w={{ base: '80%', lg: 'full' }} mx={{ base: 'auto', lg: 'inherit' }}>
                       <Image src={icon} h="100%" w="100%" />
                     </AspectRatio>
                   </Box>
@@ -61,7 +66,16 @@ const Category = () => {
         })}
       </Grid>
 
-      <Image src="/images/decor-4.png" w="52px" h="76px" pos="absolute" bottom="10px" right="244px" opacity={0.7} />
+      <Image
+        src="/images/decor-4.png"
+        w="52px"
+        h="76px"
+        pos="absolute"
+        bottom="10px"
+        right="244px"
+        opacity={0.7}
+        display={{ base: 'none', lg: 'block' }}
+      />
     </Flex>
   );
 };

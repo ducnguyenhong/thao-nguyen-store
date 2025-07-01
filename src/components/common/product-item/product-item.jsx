@@ -68,7 +68,7 @@ const ProductItem = () => {
           <LuHeart size={21} color="#002603" />
         </Tooltip>
       </Flex>
-      <AspectRatio ratio={4 / 3} py="16px">
+      <AspectRatio ratio={{ base: 16 / 9, lg: 4 / 3 }} py="16px">
         <Link href={href}>
           <Image h="100%" w="100%" src="/images/product.png" alt="product" />
         </Link>
@@ -77,7 +77,7 @@ const ProductItem = () => {
         <Flex direction="column" flex={1}>
           <Link href={href} style={{ display: 'block' }}>
             <Text
-              fontSize={16}
+              fontSize={{ base: 15, lg: 16 }}
               color="#4D4D4D"
               fontWeight={400}
               lineHeight="22px"
@@ -87,17 +87,22 @@ const ProductItem = () => {
               Táo đá xanh Úc 1kg
             </Text>
           </Link>
-          <Text mt="4px" fontSize={16} fontWeight={700}>
-            {formatCurrency(100000)}
-          </Text>
-          <Flex mt="6px" align="center" gap="2px">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <FaStar key={star} size={14} color="#FF8A00" />
-            ))}
+          <Flex align="center" justify="space-between">
+            <Flex align="center" direction="column" mt="4px">
+              <Text fontSize={{ base: 15, lg: 16 }} fontWeight={700}>
+                {formatCurrency(100000)}
+              </Text>
+              <Flex mt="6px" align="center" gap="2px">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <FaStar key={star} size={14} color="#FF8A00" />
+                ))}
+              </Flex>
+            </Flex>
+            <Box pt="8px">
+              <AddToCart />
+            </Box>
           </Flex>
         </Flex>
-
-        <AddToCart />
       </Flex>
     </Box>
   );

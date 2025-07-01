@@ -19,7 +19,7 @@ const ChooseUs = () => {
   ];
 
   return (
-    <Flex px={PX_ALL} gap="40px" py="80px" align="center" pos="relative">
+    <Flex px={PX_ALL} gap="40px" py="80px" align="center" pos="relative" display={{ base: 'none', lg: 'flex' }}>
       <Flex flex={1} gap="24px">
         <Flex flex={2 / 5} pos="relative">
           <AspectRatio ratio={276 / 400} w="full" h="90%" borderRadius={8} overflow="hidden">

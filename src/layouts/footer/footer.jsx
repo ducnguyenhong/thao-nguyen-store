@@ -23,8 +23,8 @@ const Footer = () => {
   return (
     <Flex as="footer" bgColor="#191919" w="full" direction="column">
       <Flex
-        pt="80px"
-        pb="60px"
+        pt={{ base: '32px', lg: '80px' }}
+        pb={{ base: '32px', lg: '60px' }}
         px={PX_ALL}
         bgImage="url(/images/bg-footer.webp)"
         bgSize="cover"
@@ -32,17 +32,17 @@ const Footer = () => {
         bgPos="center"
         h="full"
         w="full"
-        gap="120px"
+        gap={{ base: '32px', lg: '120px' }}
         direction={{ base: 'column', lg: 'row' }}
       >
         <Flex direction="column" flex={2 / 5} gap="16px">
           <Flex align="center" gap="6px">
             <Image src="/images/logo.webp" h="38px" w="38px" />
-            <Text fontSize={22} fontWeight={600} color="#FFF">
+            <Text fontSize={{ base: 20, lg: 22 }} fontWeight={600} color="#FFF">
               Thảo Nguyên Store
             </Text>
           </Flex>
-          <Text color="#999">
+          <Text color="#999" fontSize={{ base: 14, lg: 16 }}>
             Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum mag
           </Text>
           <Socials />
@@ -53,7 +53,7 @@ const Footer = () => {
             Về chúng tôi
           </Text>
           <Box my="16px" h="1px" w="24px" bgColor="#00B207" />
-          <Flex direction="column" gap="12px">
+          <Flex direction="column" gap={{ base: '6px', lg: '12px' }}>
             {ABOUT_US.map((item) => {
               const { href, title } = item;
               return (
@@ -72,7 +72,7 @@ const Footer = () => {
             Về chúng tôi
           </Text>
           <Box my="16px" h="1px" w="24px" bgColor="#00B207" />
-          <Flex direction="column" gap="12px">
+          <Flex direction="column" gap={{ base: '6px', lg: '12px' }}>
             {ABOUT_US.map((item) => {
               const { href, title } = item;
               return (
@@ -91,7 +91,7 @@ const Footer = () => {
             Về chúng tôi
           </Text>
           <Box my="16px" h="1px" w="24px" bgColor="#00B207" />
-          <Flex direction="column" gap="12px">
+          <Flex direction="column" gap={{ base: '6px', lg: '12px' }}>
             {ABOUT_US.map((item) => {
               const { href, title } = item;
               return (
@@ -107,11 +107,11 @@ const Footer = () => {
       </Flex>
 
       <Flex borderTop="1px solid #333333" py="24px" px={PX_ALL} align="center" justify="space-between">
-        <Text color="#808080" fontSize={16}>
+        <Text color="#808080" fontSize={{ base: 14, lg: 16 }}>
           © 2025 - Bản quyền thuộc về Thảo Nguyên Store
         </Text>
 
-        <Flex align="center" gap="8px">
+        <Flex align="center" gap="8px" display={{ base: 'none', lg: 'flex' }}>
           <Flex
             title="Chuyển khoản"
             h="34px"

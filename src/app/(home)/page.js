@@ -19,8 +19,8 @@ export default function Home() {
         <Benefit />
       </RevealClient>
 
-      <RevealClient pos="relative" zIndex={5}>
-        <FeaturedProduct />
+      <RevealClient threshold={0.3}>
+        <HotProduct />
       </RevealClient>
 
       <RevealClient threshold={0.3} pos="relative" zIndex={1}>
@@ -32,8 +32,8 @@ export default function Home() {
         <Statistic />
       </RevealClient>
 
-      <RevealClient threshold={0.3}>
-        <HotProduct />
+      <RevealClient pos="relative" zIndex={5}>
+        <FeaturedProduct />
       </RevealClient>
 
       <RevealClient>

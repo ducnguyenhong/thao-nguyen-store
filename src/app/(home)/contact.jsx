@@ -6,8 +6,20 @@ import { TfiHeadphoneAlt } from 'react-icons/tfi';
 
 const Contact = () => {
   return (
-    <Flex px={PX_ALL} py="40px" gap="24px" bgColor="#FFF" direction={{ base: 'column', lg: 'row' }}>
-      <Flex flex={1 / 4} border="1px solid #d2f0d4" borderRadius={8} p="20px" direction="column">
+    <Flex
+      px={PX_ALL}
+      py={{ base: '32px', lg: '40px' }}
+      gap={{ base: '16px', lg: '24px' }}
+      bgColor="#FFF"
+      direction={{ base: 'column', lg: 'row' }}
+    >
+      <Flex
+        flex={1 / 4}
+        border="1px solid #d2f0d4"
+        borderRadius={8}
+        p={{ base: '16px', lg: '20px' }}
+        direction="column"
+      >
         <Flex w="56px" h="56px" align="center" justify="center" borderRadius="full" bgColor="#d9f4da">
           <SlLocationPin size={24} color="#00B207" />
         </Flex>
@@ -18,7 +30,13 @@ const Contact = () => {
           Khu 3, Bảo Yên, Thanh Thuỷ, Phú Thọ
         </Text>
       </Flex>
-      <Flex flex={1 / 4} border="1px solid #d2f0d4" borderRadius={8} p="20px" direction="column">
+      <Flex
+        flex={1 / 4}
+        border="1px solid #d2f0d4"
+        borderRadius={8}
+        p={{ base: '16px', lg: '20px' }}
+        direction="column"
+      >
         <Flex w="56px" h="56px" align="center" justify="center" borderRadius="full" bgColor="#d9f4da">
           <FiPhone size={23} color="#00B207" />
         </Flex>
@@ -31,7 +49,13 @@ const Contact = () => {
           </Text>
         </a>
       </Flex>
-      <Flex flex={2 / 4} border="1px solid #d2f0d4" borderRadius={8} p="20px" direction="column">
+      <Flex
+        flex={2 / 4}
+        border="1px solid #d2f0d4"
+        borderRadius={8}
+        p={{ base: '16px', lg: '20px' }}
+        direction="column"
+      >
         <Flex w="56px" h="56px" align="center" justify="center" borderRadius="full" bgColor="#d9f4da">
           <TfiHeadphoneAlt size={23} color="#00B207" />
         </Flex>
